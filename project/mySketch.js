@@ -1,15 +1,26 @@
+let s = [{x: Math.random(0,400), y: Math.random(0,400), w: Math.random(0,400), h: Math.random(0,400)}]
+
+function keyPressed(){
+  s.push({x: random(0,400), y: random(0,400), w: random(0,200), h: random(0,200)})
+  console.log('a')
+}
 
 
-/*function setup(){
+
+
+function setup(){
   createCanvas(400, 400)
 }
 
 function draw(){
   background(200)
-  ellipse(mouseX, mouseY, 20, 20)
+  for(let i in s ){
+    noStroke()
+    fill(s[i].x, s[i].y, s[i].w, s[i].h)
+    ellipse(s[i].x, s[i].y, s[i].w, s[i].h)
+  }
 }
 
-*/
 
 
 
@@ -20,13 +31,7 @@ function draw(){
 
 
 
-
-
-
-
-
-
-
+/*
 
 let myFont;
 let sentence = "Hello, how are you doing today? I brought cookies."
@@ -52,3 +57,5 @@ function draw() {
 
   
 }
+
+*/
