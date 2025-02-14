@@ -42,7 +42,8 @@ const questions = [
   "Does the concept of conformal cyclic cosmology propose a perpetually repeating universe, and can we detect signals from prior aeons?",
   "Could axions simultaneously resolve the strong CP problem and constitute a primary candidate for cold dark matter?",
   "Does the Wheeler-DeWitt equation, in the absence of a temporal parameter, imply that time is an emergent rather than fundamental phenomenon?",
-  "What is three times seven?"
+  "What is three times seven?",
+  "AHHHH"
 ];
 
 function keyPressed(){
