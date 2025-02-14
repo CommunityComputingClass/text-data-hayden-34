@@ -3,8 +3,11 @@ let myFont;
 let words;
 let question;
 let answered = false;
+let store;
+let threeXSeven = false;
 let x = ""
 const questions = [
+  "What is the meaning of life?",
   "What catalyzed the primordial singularity's transmutation into the observable cosmos, and does a pre-spatiotemporal framework exist?",
   "Is the cosmos an unbounded continuum, or does it possess a topologically constrained manifold?",
   "Do hyperdimensional multiverses coalesce through quantum decoherence, and if so, what are their ontological ramifications?",
@@ -38,7 +41,8 @@ const questions = [
   "Are neutrinos Majorana particles, and could their properties resolve the matter-antimatter asymmetry of the cosmos?",
   "Does the concept of conformal cyclic cosmology propose a perpetually repeating universe, and can we detect signals from prior aeons?",
   "Could axions simultaneously resolve the strong CP problem and constitute a primary candidate for cold dark matter?",
-  "Does the Wheeler-DeWitt equation, in the absence of a temporal parameter, imply that time is an emergent rather than fundamental phenomenon?"
+  "Does the Wheeler-DeWitt equation, in the absence of a temporal parameter, imply that time is an emergent rather than fundamental phenomenon?",
+  "What is three times seven?"
 ];
 
 function keyPressed(){
@@ -53,6 +57,7 @@ function setup(){
   createCanvas(400, 400)
   myFont = loadFont("knewave.otf");
   question = questions[floor(random(0, questions.length))]
+
   for(let i = 500; i > 0; i--){
     s.push({x: random(0,400), y: random(0,400), w: random(0,200), h: random(0,200)})
   }
@@ -92,11 +97,28 @@ function draw(){
    
     text(x, 200, 360)
   }
+  if(threeXSeven){
+    textSize(40)
+    fill('green')
+    text("Correct!", 200, 300)
+  }
 }
 function collect(){
+  store = question
   words = document.getElementById('input').value
-  answered = true;
-  x = x+"X"
+  if(question = "What is three times seven?" && words == "21"){
+    threeXSeven = true;
+    answered = false;
+    question = "What is three times seven?"
+  }else{
+    
+    answered = true;
+    x = x+"X"
+    question = store;
+   
+    
+  }
+
 }
 
 
